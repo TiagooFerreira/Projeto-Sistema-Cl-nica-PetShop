@@ -1,0 +1,61 @@
+create database bdjava;
+
+use bdjava;
+
+create table cliente (
+	id_cliente int auto_increment not null,
+    nome varchar(30) not null,
+    cpf varchar(30) not null,
+    endereco varchar(100) not null,
+    celular varchar(18),
+    primary key(id_cliente)
+    );
+    
+create table animal (
+	id_animal int auto_increment,
+    tipo_animal varchar(20) not null,
+    nome_animal varchar(30) not null,
+    raca varchar(25) not null,
+    idade varchar(2) not null,
+    cpf_dono_animal varchar(30) not null,
+    primary key(id_animal)
+    );
+
+
+create table funcionario(
+	id_funcionario int auto_increment not null,
+    func_nome varchar(45) not null,
+    func_tel varchar(15) not null,
+    func_endereco varchar(100) not null,
+    func_login varchar(30) not null,
+    func_senha varchar(15) not null,
+    primary key(id_funcionario)
+    ); 
+    
+create table estoque(
+	id_produto int auto_increment not null,
+    nome_produto varchar(25) not null,
+    valor_produto double not null,
+    qtd_produto int,
+    primary key(id_produto)
+    );
+
+    insert into funcionario (func_nome, func_tel, func_endereco, func_login, func_senha) values ("Administrador", "99999-9999", "Teste" ,"admin", "123456");
+    
+    
+    insert into cliente (nome, cpf, endereco ,celular) values ("joao", "123.456.789-10", "Rua da esperança", "(32)33333-3333");
+    insert into cliente (nome, cpf, endereco ,celular) values ("Maria", "458.456.789-10", "Rua 1 de Abril", "(32)44444-3333");
+    insert into cliente (nome, cpf, endereco ,celular) values ("Renato", "852.456.456-12", "Rua Dr Joao", "(32)99999-3333");
+    insert into cliente (nome, cpf, endereco ,celular) values ("Luisa", "741.456.789-99", "Praça da Luz", "(32)55555-3333");
+    
+    
+    insert into animal (tipo_animal, nome_animal, raca, idade, cpf_dono_animal) values ("Cachorro", "Rufus", "Pastor-Alemão", "2", "123.456.789-10");
+    insert into animal (tipo_animal, nome_animal, raca, idade, cpf_dono_animal) values ("Gato", "Bingo", "Angorá", "1", "123.456.789-10");
+    insert into animal (tipo_animal, nome_animal, raca, idade, cpf_dono_animal) values ("Gato", "Bola", "Persa", "3", "458.456.789-10");
+    insert into animal (tipo_animal, nome_animal, raca, idade, cpf_dono_animal) values ("Cachorro", "Bill", "Buldogue", "2", "852.456.456-12");
+    insert into animal (tipo_animal, nome_animal, raca, idade, cpf_dono_animal) values ("Cachorro", "Sorvete", "Poodle", "5", "741.456.789-99");
+    insert into animal (tipo_animal, nome_animal, raca, idade, cpf_dono_animal) values ("Gato", "Lua", "Ragdoll", "1", "741.456.789-99");
+    
+    
+    insert into estoque(nome_produto, valor_produto, qtd_produto) values ("Ração", 50.0, 100);
+    insert into estoque(nome_produto, valor_produto, qtd_produto) values ("Kit Banho", 25.0, 50);
